@@ -36,7 +36,7 @@ int main()
             cout << "책 저자: ";
             getline(cin, author);
             manager.addBook(title, author);
-			Book* book = manager.getBookByTitle(title);
+			Book* book = manager.getBookByTitle(title, choice);
             borrowManager.initializeStock(book);
         }
         else if (choice == 2)
@@ -49,7 +49,7 @@ int main()
             cout << "검색할 책 제목: ";
             cin.ignore();
             getline(cin, title);
-            manager.getBookByTitle(title);
+            manager.getBookByTitle(title, choice);
         }
         else if (choice == 4)
         {
@@ -57,7 +57,7 @@ int main()
             cout << "검색할 저자명: ";
             cin.ignore();
             getline(cin, author);
-            manager.getBookByAuthor(author);
+            manager.getBookByAuthor(author, choice);
 		}
         else if (choice == 5)
         {

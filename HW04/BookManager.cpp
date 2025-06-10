@@ -1,6 +1,6 @@
 #include "BookManager.h"
 
-Book* BookManager::findBookByTitle(const string& title)
+Book* BookManager::findBookByTitle(const string& title, int choice)
 {
 	if (books.empty())
 	{
@@ -12,7 +12,10 @@ Book* BookManager::findBookByTitle(const string& title)
 	{
 		if (books[i]->title == title)
 		{
-			cout << "책 제목:" << books[i]->title << " by " << books[i]->author << endl;
+			if (choice == 3)
+			{
+				cout << "책 제목:" << books[i]->title << " by " << books[i]->author << endl;
+			}
 			return books[i];
 		}
 	}
@@ -20,7 +23,7 @@ Book* BookManager::findBookByTitle(const string& title)
 	return nullptr;
 }
 
-Book* BookManager::findBookByAuthor(const string& author)
+Book* BookManager::findBookByAuthor(const string& author, int choice)
 {
 	if (books.empty())
 	{
@@ -32,7 +35,10 @@ Book* BookManager::findBookByAuthor(const string& author)
 	{
 		if (books[i]->author == author)
 		{
-			cout << "책 저자:" << books[i]->author << "의 책 제목은 " << books[i]->title << "입니다." << endl;
+			if (choice == 4)
+			{
+				cout << "책 저자:" << books[i]->author << "의 책 제목은 " << books[i]->title << "입니다." << endl;
+			}
 			return books[i];
 		}
 	}
@@ -62,14 +68,14 @@ void BookManager::displayAllBooks() const
 	}
 }
 
-Book* BookManager::getBookByTitle(const string& title)
+Book* BookManager::getBookByTitle(const string& title, int choice)
 {
-    return findBookByTitle(title);
+    return findBookByTitle(title, choice);
 }
 
-Book* BookManager::getBookByAuthor(const string& author)
+Book* BookManager::getBookByAuthor(const string& author, int choice)
 {
-    return findBookByAuthor(author);
+    return findBookByAuthor(author, choice);
 }
 
 BookManager::~BookManager()

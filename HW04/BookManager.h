@@ -12,13 +12,13 @@ private:
     vector<Book*> books;
 
 private:
-    Book* findBookByTitle(const string& title);
-	Book* findBookByAuthor(const string& author);
+    Book* findBookByTitle(const string& title, int choice);
+	Book* findBookByAuthor(const string& author, int choice);
 
 public:
     void addBook(const string& title, const string& author);
     void displayAllBooks() const;
-    Book* getBookByTitle(const string& title);
-    Book* getBookByAuthor(const string& author);
+    Book* getBookByTitle(const string& title, int choice);
+    Book* getBookByAuthor(const string& author, int choice);
     ~BookManager();
 };
